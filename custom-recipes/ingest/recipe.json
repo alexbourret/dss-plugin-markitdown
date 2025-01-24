@@ -14,18 +14,7 @@
             "arity": "UNARY",
             "required": true,
             "acceptsDataset": true
-        },
-        {
-            "name": "input_B_role",
-            "label": "input B displayed name",
-            "description": "what input B means",
-            "arity": "NARY",
-            "required": false,
-            "acceptsDataset": true
-            // ,'mustBeSQL': true
-            // ,'mustBeStrictlyType':'HDFS'
         }
-        // ...
     ],
 
     "outputRoles": [
@@ -36,16 +25,7 @@
             "arity": "UNARY",
             "required": false,
             "acceptsDataset": true
-        },
-        {
-            "name": "errors_output",
-            "label": "errors output displayed name",
-            "description": "what errors output means",
-            "arity": "UNARY",
-            "required": false,
-            "acceptsDataset": true
         }
-        // ...
     ],
 
     /* The field "params" holds a list of all the params
@@ -73,33 +53,12 @@
                int(get_recipe_config()['parameter2'])
             */
         },
-
-        // A "SELECT" parameter is a multi-choice selector. Choices are specified using the selectChoice field
         {
-            "name": "parameter3",
-            "type": "SELECT",
-            "selectChoices": [
-                {
-                    "value": "val_x",
-                    "label": "display name for val_x"
-                },
-                {
-                    "value": "val_y",
-                    "label": "display name for val_y"
-                }
-            ]
-        },
-
-        // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
-        // To specify the input schema whose column names are used, use the "columnRole" field like below.
-        // The column names will come from the schema of the first dataset associated to that role.
-        {
-            "name": "parameter4",
+            "name": "url_column",
+            "label": "url_column",
             "type": "COLUMN",
-            "columnRole": "input_B_role"
+            "columnRole": "input_A_role"
         }
-
-        // The 'COLUMNS' type works in the same way, except that it is a list of strings.
     ],
 
     // The field "resourceKeys" holds a list of keys that allows to limit the number
