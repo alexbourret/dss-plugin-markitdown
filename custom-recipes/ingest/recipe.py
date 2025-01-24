@@ -56,15 +56,23 @@ config = get_recipe_config()
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+from markitdown import MarkItDown
 
 # Read recipe inputs
 documents_to_process = input_A_datasets[0] #dataiku.Dataset("documents_to_process")
 documents_to_process_df = documents_to_process.get_dataframe()
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
+md = MarkItDown()
+results = []
 for index, line in documents_to_process_df.iterrows():
+    output_line = {}
     url = line[column_name]
+    result = md.convert(url)
+    output_line['url'] = url
+    output_line['line'] = result.text_content
     print("ALX:url={}".format(url))
+    results.append(output_line)
 
 # Compute recipe outputs from inputs
 # TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
