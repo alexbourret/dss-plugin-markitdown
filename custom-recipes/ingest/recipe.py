@@ -66,8 +66,8 @@ documents_to_process_df = documents_to_process.get_dataframe()
 # NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
 
 output_df = documents_to_process_df # For this sample code, simply copy input to output
-output_A_datasets[0] = documents_to_process_df
-
+#output_A_datasets[0] = documents_to_process_df
+output_A_datasets[0].write_with_schema(output_df)
 # Write recipe outputs
 #output = dataiku.Dataset("output")
 #output.write_with_schema(output_df)
