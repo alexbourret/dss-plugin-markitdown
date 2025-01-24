@@ -74,13 +74,14 @@ for index, line in documents_to_process_df.iterrows():
     print("ALX:url={}".format(result.text_content))
     results.append(output_line)
 
+odf = pd.DataFrame(results)
 # Compute recipe outputs from inputs
 # TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
 # NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
 
-output_df = documents_to_process_df # For this sample code, simply copy input to output
+#output_df = documents_to_process_df # For this sample code, simply copy input to output
 #output_A_datasets[0] = documents_to_process_df
-output_A_datasets[0].write_with_schema(output_df)
+output_A_datasets[0].write_with_schema(odf)
 # Write recipe outputs
 #output = dataiku.Dataset("output")
 #output.write_with_schema(output_df)
