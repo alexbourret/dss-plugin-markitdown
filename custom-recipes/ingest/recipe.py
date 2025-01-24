@@ -69,8 +69,8 @@ for index, line in documents_to_process_df.iterrows():
     output_line = {}
     url = line[column_name]
     result = md.convert(url)
-    output_line['url'] = url
-    output_line['line'] = result.text_content
+    #output_line['url'] = url
+    output_line['url'] = result.text_content
     print("ALX:url={}".format(url))
     results.append(output_line)
 
