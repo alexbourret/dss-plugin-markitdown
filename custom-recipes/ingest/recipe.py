@@ -69,5 +69,5 @@ output_df = documents_to_process_df # For this sample code, simply copy input to
 
 
 # Write recipe outputs
-output = dataiku.Dataset("output")
-output.write_with_schema(output_df)
+#output = dataiku.Dataset("output")
+#output.write_with_schema(output_df)
