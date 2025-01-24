@@ -71,7 +71,7 @@ for index, line in documents_to_process_df.iterrows():
     result = md.convert(url)
     #output_line['url'] = url
     output_line['url'] = result.text_content
-    print("ALX:url={}".format(url))
+    print("ALX:url={}".format(result.text_content))
     results.append(output_line)
 
 # Compute recipe outputs from inputs
