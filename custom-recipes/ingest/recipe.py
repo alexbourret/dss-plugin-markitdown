@@ -59,7 +59,9 @@ from dataiku import pandasutils as pdu
 # Read recipe inputs
 documents_to_process = input_A_datasets[0] #dataiku.Dataset("documents_to_process")
 documents_to_process_df = documents_to_process.get_dataframe()
+column_name = 
 for line in documents_to_process_df.iterrows():
+    line[]
     print("ALX:")
 
 # Compute recipe outputs from inputs
