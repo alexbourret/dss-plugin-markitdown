@@ -62,7 +62,7 @@ documents_to_process = input_A_datasets[0] #dataiku.Dataset("documents_to_proces
 documents_to_process_df = documents_to_process.get_dataframe()
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
-for line in documents_to_process_df.iterrows():
+for index, line in documents_to_process_df.iterrows():
     url = line[column_name]
     print("ALX:url={}".format(url))
 
