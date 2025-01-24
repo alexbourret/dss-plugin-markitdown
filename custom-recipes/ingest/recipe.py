@@ -57,7 +57,7 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Read recipe inputs
-documents_to_process = dataiku.Dataset("documents_to_process")
+documents_to_process = input_A_datasets[0] #dataiku.Dataset("documents_to_process")
 documents_to_process_df = documents_to_process.get_dataframe()
 
 
@@ -66,7 +66,7 @@ documents_to_process_df = documents_to_process.get_dataframe()
 # NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
 
 output_df = documents_to_process_df # For this sample code, simply copy input to output
-
+output_A_datasets[0] = documents_to_process_df
 
 # Write recipe outputs
 #output = dataiku.Dataset("output")
