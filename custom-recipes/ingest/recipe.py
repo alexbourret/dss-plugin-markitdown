@@ -40,6 +40,7 @@ output_A_datasets = [dataiku.Dataset(name) for name in output_A_names]
 
 # For optional parameters, you should provide a default value in case the parameter is not present:
 my_variable = get_recipe_config().get('parameter_name', None)
+config = get_recipe_config()
 
 # Note about typing:
 # The configuration of the recipe is passed through a JSON object
