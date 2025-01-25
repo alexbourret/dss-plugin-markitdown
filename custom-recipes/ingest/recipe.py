@@ -89,6 +89,8 @@ if handle:
 
 else:
     column_name = config.get("url_column")
+    if not column_name:
+        raise Exception("The column containing the documents URl must be selected")
     print("ALX:column_name={}".format(column_name))
 
     results = []
