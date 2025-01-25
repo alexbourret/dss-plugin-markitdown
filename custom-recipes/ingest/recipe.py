@@ -67,7 +67,12 @@ try:
     documents_to_process_df = documents_to_process.get_dataframe()
 except Exception as error_message:
     print("ALX:documents_to_process={}".format(dir(documents_to_process)))
-    handle = dataiku.Folder(documents_to_process)
+    input_folder = get_input_names_for_role("input_A_role")
+    print("ALX:2")
+    input_A_datasets = [dataiku.Folder(name) for name in input_A_names]
+    print("ALX:3")
+    handle = dataiku.Folder(input_A_datasets[0])
+    print("ALX:4")
 
 if handle:
     print("ALX:FODLER !")
