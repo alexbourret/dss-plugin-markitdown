@@ -41,7 +41,5 @@
     //
     // Administrators can configure the limit per resource key in the Administration > Settings > Flow build
     // screen.
-
     "resourceKeys": []
-
 }
