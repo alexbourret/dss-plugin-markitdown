@@ -60,7 +60,12 @@ from markitdown import MarkItDown
 
 # Read recipe inputs
 documents_to_process = input_A_datasets[0] #dataiku.Dataset("documents_to_process")
-documents_to_process_df = documents_to_process.get_dataframe()
+documents_to_process_df = None
+handle = None
+try:
+    documents_to_process_df = documents_to_process.get_dataframe()
+except Exception as error_message:
+    handle = dataiku.Folder(documents_to_process)
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
 md = MarkItDown()
