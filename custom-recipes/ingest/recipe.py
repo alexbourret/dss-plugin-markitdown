@@ -86,27 +86,29 @@ if handle:
             print("ALX:5")
             result = md.convert(data)
             print("ALX:6:{}".format(dir(result)))
-column_name = config.get("url_column")
-print("ALX:column_name={}".format(column_name))
 
-results = []
-for index, line in documents_to_process_df.iterrows():
-    output_line = line
-    url = line[column_name]
-    result = md.convert(url)
-    #output_line['url'] = url
-    output_line['markdown_document'] = result.text_content
-    print("ALX:url={}".format(result.text_content))
-    results.append(output_line)
+else:
+    column_name = config.get("url_column")
+    print("ALX:column_name={}".format(column_name))
 
-odf = pd.DataFrame(results)
-# Compute recipe outputs from inputs
-# TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
-# NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
+    results = []
+    for index, line in documents_to_process_df.iterrows():
+        output_line = line
+        url = line[column_name]
+        result = md.convert(url)
+        #output_line['url'] = url
+        output_line['markdown_document'] = result.text_content
+        print("ALX:url={}".format(result.text_content))
+        results.append(output_line)
 
-#output_df = documents_to_process_df # For this sample code, simply copy input to output
-#output_A_datasets[0] = documents_to_process_df
-output_A_datasets[0].write_with_schema(odf)
-# Write recipe outputs
-#output = dataiku.Dataset("output")
-#output.write_with_schema(output_df)
+    odf = pd.DataFrame(results)
+    # Compute recipe outputs from inputs
+    # TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
+    # NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
+
+    #output_df = documents_to_process_df # For this sample code, simply copy input to output
+    #output_A_datasets[0] = documents_to_process_df
+    output_A_datasets[0].write_with_schema(odf)
+    # Write recipe outputs
+    #output = dataiku.Dataset("output")
+    #output.write_with_schema(output_df)
