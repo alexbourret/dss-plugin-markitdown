@@ -99,8 +99,11 @@ else:
         url = line[column_name]
         result = md.convert(url)
         #output_line['url'] = url
-        output_line['markdown_document'] = result.text_content
-        print("ALX:url={}".format(result.text_content))
+        if result:
+            output_line['markdown_document'] = result.text_content
+            print("ALX:url={}".format(result.text_content))
+        else:
+            output_line['markdown_document'] = None
         results.append(output_line)
 
     odf = pd.DataFrame(results)
