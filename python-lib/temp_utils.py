@@ -8,7 +8,7 @@ import pwd
 import tempfile
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO, format='Plugin: PI System | %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='Plugin: MarkItDown | %(levelname)s - %(message)s')
 
 
 class CustomTmpFile(object):
