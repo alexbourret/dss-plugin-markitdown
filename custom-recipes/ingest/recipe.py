@@ -65,6 +65,7 @@ handle = None
 try:
     documents_to_process_df = documents_to_process.get_dataframe()
 except Exception as error_message:
+    print("ALX:documents_to_process={}".format(documents_to_process))
     handle = dataiku.Folder(documents_to_process)
 
 if handle:
