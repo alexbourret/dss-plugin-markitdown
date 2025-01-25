@@ -74,13 +74,20 @@ except Exception as error_message:
     handle = input_A_datasets[0]
     print("ALX:4")
 
+md = MarkItDown()
+
 if handle:
     print("ALX:FODLER !")
     paths = handle.list_paths_in_partition()
     print("ALX:paths={}".format(paths))
+    with handle.get_download_stream("myinputfile.txt") as f:
+        data = f.read()
+        print("ALX:5")
+        result = md.convert(data)
+        print("ALX:6:{}".format(result.text_content))
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
-md = MarkItDown()
+
 results = []
 for index, line in documents_to_process_df.iterrows():
     output_line = line
