@@ -83,11 +83,12 @@ if handle:
     print("ALX:paths={}".format(paths))
     for path in paths:
         with handle.get_download_stream(path) as f:
+            temp_cache = CustomTmpFile()
+            temp_location = temp_cache.get_temporary_cache_dir()
             data = f.read()
             print("ALX:5")
             result = md.convert(data)
             print("ALX:6:{}".format(dir(result)))
-
 else:
     column_name = config.get("url_column")
     if not column_name:
