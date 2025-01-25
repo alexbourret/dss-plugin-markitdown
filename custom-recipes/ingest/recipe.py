@@ -71,7 +71,7 @@ except Exception as error_message:
     print("ALX:2")
     input_A_datasets = [dataiku.Folder(name) for name in input_A_names]
     print("ALX:3")
-    handle = dataiku.Folder(input_A_datasets[0])
+    handle = input_A_datasets[0]
     print("ALX:4")
 
 if handle:
