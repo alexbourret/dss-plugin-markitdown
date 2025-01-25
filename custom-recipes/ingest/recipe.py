@@ -85,7 +85,7 @@ if handle:
             data = f.read()
             print("ALX:5")
             result = md.convert(data)
-            print("ALX:6:{}".format(result.text_content))
+            print("ALX:6:{}".format(dir(result)))
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
 
