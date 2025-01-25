@@ -76,6 +76,8 @@ except Exception as error_message:
 
 if handle:
     print("ALX:FODLER !")
+    paths = handle.list_paths_in_partition()
+    print("ALX:paths={}".format(paths))
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
 md = MarkItDown()
