@@ -66,6 +66,9 @@ try:
     documents_to_process_df = documents_to_process.get_dataframe()
 except Exception as error_message:
     handle = dataiku.Folder(documents_to_process)
+
+if handle:
+    print("ALX:FODLER !")
 column_name = config.get("url_column")
 print("ALX:column_name={}".format(column_name))
 md = MarkItDown()
