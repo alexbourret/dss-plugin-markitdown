@@ -13,7 +13,8 @@
             "description": "what input A means",
             "arity": "UNARY",
             "required": true,
-            "acceptsDataset": true
+            "acceptsDataset": true,
+            "acceptsManagedFolder": true
         }
     ],
 
