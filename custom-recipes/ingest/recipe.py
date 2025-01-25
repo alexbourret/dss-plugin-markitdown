@@ -66,7 +66,7 @@ print("ALX:column_name={}".format(column_name))
 md = MarkItDown()
 results = []
 for index, line in documents_to_process_df.iterrows():
-    output_line = {}
+    output_line = line
     url = line[column_name]
     result = md.convert(url)
     #output_line['url'] = url
