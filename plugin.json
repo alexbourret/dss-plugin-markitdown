@@ -5,7 +5,7 @@
         "label": "Markitdown",
         "description": "",
         "author": "Dataiku (Alex Bourret)",
-        "icon": "fas fa-puzzle-piece",
+        "icon": "icon-chevron-down",
         "tags": [],
         "url": "",
         "licenseInfo": "Apache Software License"
