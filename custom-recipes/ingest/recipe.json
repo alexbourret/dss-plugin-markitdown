@@ -2,7 +2,7 @@
     "meta": {
         "label": "Ingest",
         "description": "",
-        "icon": "fas fa-puzzle-piece"
+        "icon": "icon-chevron-down"
     },
 
     "kind": "PYTHON",
