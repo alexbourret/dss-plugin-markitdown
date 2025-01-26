@@ -4,6 +4,8 @@ Based on Microsoft's [MarkItDown](https://github.com/microsoft/markitdown) libra
 
 The plugin consists in a custom recipe that takes a list of document to process as input. This dataset is duplicated at the output of the recipe, with an extra column containing the document in markdown format.
 
+The library currently process HTML, PDF, CSV, JSON, XML, various MS formats.
+
 ## How to use
 
 - Have a dataset containig the list of document to process in a column, here "`url`"
