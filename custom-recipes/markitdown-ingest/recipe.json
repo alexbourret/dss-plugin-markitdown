@@ -1,16 +1,18 @@
 {
     "meta": {
         "label": "Ingest",
-        "description": "",
+        "description": "Convert all input documents to MarkDown format",
         "icon": "icon-chevron-down"
     },
 
     "kind": "PYTHON",
+    "selectableFromDataset": "input_A_role",
+    "selectableFromFolder": "input_A_role",
     "inputRoles": [
         {
             "name": "input_A_role",
-            "label": "input A displayed name",
-            "description": "what input A means",
+            "label": "Source dataset or folder",
+            "description": "Folder or dataset containing the urls of documents to process",
             "arity": "UNARY",
             "required": true,
             "acceptsDataset": true,
@@ -21,8 +23,8 @@
     "outputRoles": [
         {
             "name": "main_output",
-            "label": "main output displayed name",
-            "description": "what main output means",
+            "label": "Converted documents' dataset",
+            "description": "Dataset where documents will be stored once markdown converted",
             "arity": "UNARY",
             "required": false,
             "acceptsDataset": true
@@ -31,16 +33,10 @@
     "params": [
         {
             "name": "url_column",
-            "label": "url_column",
+            "label": "URLs column",
             "type": "COLUMN",
             "columnRole": "input_A_role"
         }
     ],
-
-    // The field "resourceKeys" holds a list of keys that allows to limit the number
-    // of concurrent executions and activities triggered by this recipe.
-    //
-    // Administrators can configure the limit per resource key in the Administration > Settings > Flow build
-    // screen.
     "resourceKeys": []
 }
