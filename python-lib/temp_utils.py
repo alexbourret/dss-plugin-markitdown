@@ -42,6 +42,19 @@ class CustomTmpFile(object):
         self.tmp_output_dir = tempfile.TemporaryDirectory(dir=cache_absolute_path)
         return self.tmp_output_dir
 
+    def get_temporary_cache_file(self, output_file_name):
+        """
+        Return the path the temporary file in memory
+        :param output_file_name:
+        :return:
+        """
+        logger.info("Call to open method in upload exporter ...")
+        cache_absolute_path = self.get_cache_location_from_user_config()
+        # Create a random file path for the temporary write
+        self.tmp_output_dir = tempfile.TemporaryDirectory(dir=cache_absolute_path)
+        output_file = os.path.join(self.tmp_output_dir.name, output_file_name)
+        return output_file
+
     def clean(self):
         """
         Remove cache
